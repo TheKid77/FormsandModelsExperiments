@@ -10,7 +10,16 @@
   <link rel="stylesheet" href="{% static 'css/base.css' %}">
 </head>
 <body>
-    <h1>ADD A NEW EMPLOYEE</h1>
+    <h1>EMPLOYEE PROJECT</h1>
+      <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4
+      mb-3 bg-white border-bottom shadow-sm">
+      <a href="{% url 'home' %}" class="navbar-brand my-0 mr-md-auto
+      font-weight-normal">Andy's Employee Project</a>
+        <nav class="my-2 my-md-0 mr-md-3">
+          <a class="p-2 text-dark" href="{% url 'add_employee' %}">Add Employee</a>
+           <a class="p-2 text-dark" href="{% url 'add_annual_review' %}">Add Annual Review</a>
+        </nav>
+    </div>
     <div class="container">
         {% block content %}
         {% endblock content %}

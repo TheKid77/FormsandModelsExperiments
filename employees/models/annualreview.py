@@ -9,4 +9,8 @@ class AnnualReview(models.Model):
     )
     year = models.IntegerField()
     review = models.TextField()
+
+    def __str__(self):
+        return str(self.employee) + ' ' + str(self.year) 
+        
  

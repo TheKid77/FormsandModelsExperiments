@@ -1,4 +1,4 @@
-from .models import Employee
+from .models import Employee, AnnualReview
 from django import forms
 from django.forms import ModelForm, Textarea
 from django.core.exceptions import ValidationError
@@ -29,3 +29,8 @@ class AddEmployee(ModelForm):
 
         # Remember to always return the cleaned data.
         return data
+
+class AddAnnualReview(ModelForm):
+    class Meta:
+        model = AnnualReview
+        fields = '__all__'
