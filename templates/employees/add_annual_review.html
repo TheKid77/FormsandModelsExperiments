@@ -1,0 +1,17 @@
+<!-- templates/add_employee.html-->
+{% extends '_base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Add an Annual Review{% endblock title %}
+
+{% block content %}
+
+  <h1>Add an Annual Review</h1>
+
+  <form action="{% url 'add_annual_review' %}" method='post' enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form|crispy }} 
+    <button class="btn btn-success" name=submit">Add Annual Review</button>
+  </form>
+
+{% endblock content %}
