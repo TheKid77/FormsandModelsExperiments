@@ -24,6 +24,12 @@
         {% block content %}
         {% endblock content %}
     </div>
+    {% if employee_added %}
+    <script>alert('{{employee_added}} added')</script>
+     {% endif %}
+     {% if review_added %}
+     <script>alert('review added : {{review_added}}')</script>
+     {% endif %}
     <!-- JavaScript -->
     <!-- JS, Popper.js, and jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
