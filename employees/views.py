@@ -19,8 +19,9 @@ def add_employee(request):
         form = AddEmployee(request.POST, request.FILES)
         if form.is_valid():
             form.save(commit=False)
-            form.save()
-            return redirect('/employees')
+            employee = form.save()
+            context = {'employee_added': employee}
+            return render(request, 'home.html', context)
     # Display a blank or invalid form
     context = {'form': form}
     # template_name = 'books/new_book.html'
@@ -37,8 +38,9 @@ def add_annual_review(request):
         form = AddAnnualReview(request.POST, request.FILES)
         if form.is_valid():
             form.save(commit=False)
-            form.save()
-            return redirect('/employees')
+            review = form.save()
+            context = {'review_added': review}
+            return render(request, 'home.html', context)
     # Display a blank or invalid form
     context = {'form': form}
     # template_name = 'books/new_book.html'
